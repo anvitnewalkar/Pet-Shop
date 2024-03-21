@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}  Category  {% endblock %}
+
+
+{% comment %} to override content {% endcomment %}
+
+
+{% block content%} 
+
+
+   <h1>{{category.category_name}}</h1>
+
+   {% for obj in category.product_set.all %}  
+   
+   {% comment %} it will iterate in the query set. It gets stores one by one in obj {% endcomment %}
+
+
+              {% include "productCard.html" with p=obj %} 
+
+
+   {% endfor %}
+
+
+
+
+{% endblock %}
